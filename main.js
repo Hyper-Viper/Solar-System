@@ -20,3 +20,9 @@ function check_load(){
 mv.addEventListener("touchstart", function(){
     ThunkableWebviewerExtension.postMessage("touchstarted");
 });
+
+orien = window.matchMedia("(orientation: portrait)");
+orien.addListener(function (){
+    ThunkableWebviewerExtension.postMessage((this.matches) ? "portrait" : "landscape");
+    console.log((this.matches) ? "portrait" : "landscape");
+})
