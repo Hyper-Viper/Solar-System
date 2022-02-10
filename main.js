@@ -22,7 +22,8 @@ mv.addEventListener("touchstart", function(){
 });
 
 orien = window.matchMedia("(orientation: portrait)");
+ThunkableWebviewerExtension.postMessage((this.matches) ? "portrait" : "landscape");
 orien.addListener(function (){
     ThunkableWebviewerExtension.postMessage((this.matches) ? "portrait" : "landscape");
     console.log((this.matches) ? "portrait" : "landscape");
-})
+});
